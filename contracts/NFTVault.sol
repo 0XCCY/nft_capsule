@@ -121,10 +121,6 @@ contract NFTVault is Ownable, IERC721Receiver, VRFConsumerBaseV2 {
     // owner => draws[]
     mapping(address => uint256[]) public drawOwner;
 
-    mapping(uint256 => uint256) s_requestIdToRequestIndex;
-    mapping(uint256 => uint256[]) public s_requestIndexToRandomWords;
-    uint256 public requestCounter;
-
     constructor(uint64 subscriptionId) VRFConsumerBaseV2(vrfCoordinator) {
         _nftCounter.increment();
         _capCounter.increment();
